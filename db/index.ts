@@ -1,6 +1,11 @@
-import { env } from "cloudflare:workers";
 import { drizzle } from "drizzle-orm/d1";
 import * as schema from "./schema";
+
+type CloudflareEnv = {
+  DB?: unknown;
+};
+
+const env = globalThis as typeof globalThis & CloudflareEnv;
 
 export function getDb() {
   if (!env.DB) {
@@ -9,5 +14,5 @@ export function getDb() {
     );
   }
 
-  return drizzle(env.DB, { schema });
+  return drizzle(env.DB as never, { schema });
 }
