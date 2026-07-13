@@ -1,4 +1,5 @@
 import { SiteHeader } from "../components/site-header";
+import { withSitePath } from "../lib/site-path";
 
 const featuredWork = [
   {
@@ -36,7 +37,7 @@ export default function Home() {
                 alt=""
                 className="home-hero-photo-image"
                 height="248"
-                src="/mark-clipperton.jpg"
+                src={withSitePath("/mark-clipperton.jpg")}
                 width="248"
               />
             </div>

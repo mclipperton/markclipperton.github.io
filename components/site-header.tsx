@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { withSitePath } from "../lib/site-path";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -44,7 +45,7 @@ export function SiteHeader({ activePath }: SiteHeaderProps) {
             alt="Mark Clipperton Product Designer"
             className="brand-mark-image"
             height="56"
-            src="/logo.svg"
+            src={withSitePath("/logo.svg")}
             width="193"
           />
         </Link>
