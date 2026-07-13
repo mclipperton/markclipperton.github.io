@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const featuredWork = [
   {
     label: "FinTech onboarding",
@@ -22,39 +24,6 @@ const featuredWork = [
   },
 ];
 
-const principles = [
-  {
-    title: "Clarity first",
-    copy:
-      "I strip away noise early so the product tells a single story before the user has to work for it.",
-  },
-  {
-    title: "Systems over screens",
-    copy:
-      "Strong design systems keep launch work quick and make future changes feel intentional, not patched on.",
-  },
-  {
-    title: "Polish that earns trust",
-    copy:
-      "The final 10 percent matters: spacing, tone, states, and microcopy all shape how reliable a product feels.",
-  },
-];
-
-const stats = [
-  { value: "9", label: "years designing products" },
-  { value: "28", label: "shipping cycles led" },
-  { value: "11", label: "cross-functional launches" },
-];
-
-const capabilities = [
-  "Product strategy",
-  "Design systems",
-  "Interaction design",
-  "Prototyping",
-  "Accessibility",
-  "Content design",
-];
-
 export default function Home() {
   return (
     <main className="portfolio-shell">
@@ -65,31 +34,22 @@ export default function Home() {
         </a>
 
         <nav className="topnav" aria-label="Primary">
-          <a href="#work">Work</a>
-          <a href="#approach">Approach</a>
-          <a href="#contact">Contact</a>
+          <Link href="work/">Work</Link>
+          <Link href="approach/">Approach</Link>
+          <a href="mailto:mark.clipperton@outlook.com">Contact</a>
         </nav>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <span className="eyebrow">Product designer • systems thinker • calm strategist</span>
-          <h1>Designing products that feel clear, confident, and easy to trust.</h1>
+          <span className="eyebrow">Introduction</span>
+          <h1>Product design that feels calm, confident, and clear.</h1>
           <p className="lede">
-            I’m Mark Clipperton, a product designer who helps teams turn
-            complicated ideas into calm, polished experiences. I work across
-            strategy, interface design, and prototyping to move products from
-            concept to launch without losing the details that matter.
+            I&apos;m Mark Clipperton, a product designer focused on making
+            complicated products easier to understand and easier to trust.
+            I work across strategy, systems, and interface design to help teams
+            ship with more clarity and less friction.
           </p>
-
-          <div className="hero-actions">
-            <a className="button button-primary" href="#work">
-              View selected work
-            </a>
-            <a className="button button-secondary" href="#contact">
-              Start a conversation
-            </a>
-          </div>
         </div>
 
         <aside className="hero-panel" aria-label="Designer snapshot">
@@ -109,7 +69,7 @@ export default function Home() {
           <div className="panel-grid">
             <div className="panel-card">
               <span className="panel-label">Focus</span>
-              <strong>Startup products, systems thinking, and launch-ready UX</strong>
+              <strong>Product strategy, systems thinking, and launch-ready UX</strong>
             </div>
             <div className="panel-card">
               <span className="panel-label">Style</span>
@@ -119,30 +79,14 @@ export default function Home() {
         </aside>
       </section>
 
-      <section className="stats-row" aria-label="Experience summary">
-        {stats.map((stat) => (
-          <article className="stat-card" key={stat.label}>
-            <strong>{stat.value}</strong>
-            <span>{stat.label}</span>
-          </article>
-        ))}
-      </section>
-
-      <section className="capabilities-section" aria-label="Capabilities">
-        {capabilities.map((capability) => (
-          <span className="chip" key={capability}>
-            {capability}
-          </span>
-        ))}
-      </section>
-
-      <section className="work-section" id="work">
+      <section className="work-section" id="featured-work">
         <div className="section-heading">
-          <span className="eyebrow">Selected work</span>
-          <h2>Focused on products where clarity changes the result.</h2>
+          <span className="eyebrow">Featured work</span>
+          <h2>A few projects that show how I think: structure first, polish second.</h2>
           <p>
-            A few projects that show how I think: structure first, polish second,
-            then iterate until the experience feels obvious.
+            These examples reflect a practical approach to product design:
+            simplify the problem, make the system consistent, then refine the
+            experience until it feels obvious.
           </p>
         </div>
 
@@ -157,44 +101,6 @@ export default function Home() {
               <p>{item.summary}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="principles-section" id="approach">
-        <div className="section-heading">
-          <span className="eyebrow">Working style</span>
-          <h2>Steady process, high standards, no drama.</h2>
-        </div>
-
-        <div className="principles-grid">
-          {principles.map((principle) => (
-            <article className="principle-card" key={principle.title}>
-              <h3>{principle.title}</h3>
-              <p>{principle.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="contact-section" id="contact">
-        <div>
-          <span className="eyebrow">Let’s build something worth shipping</span>
-          <h2>Available for product design leadership, concept work, and redesigns.</h2>
-        </div>
-
-        <p>
-          If your team needs a designer who can simplify the complicated, protect
-          the details, and keep momentum moving, I’d love to hear what you’re
-          building.
-        </p>
-
-        <div className="contact-actions">
-          <a className="button button-primary" href="mailto:mark@markclipperton.design">
-            mark@markclipperton.design
-          </a>
-          <a className="button button-secondary" href="https://uk.linkedin.com/in/markclipperton">
-            LinkedIn
-          </a>
         </div>
       </section>
     </main>

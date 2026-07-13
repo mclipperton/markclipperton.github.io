@@ -1,0 +1,12 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="48" fill="#F7F8FC"/>
+  <circle cx="1004" cy="118" r="176" fill="#DCE8FF"/>
+  <circle cx="180" cy="516" r="244" fill="#EAF2FF"/>
+  <rect x="82" y="82" width="1036" height="466" rx="34" fill="white" stroke="#D7E3FF"/>
+  <text x="124" y="190" fill="#1D4ED8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">MARK CLIPPERTON</text>
+  <text x="124" y="306" fill="#0F172A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-3">Product design that feels calm,</text>
+  <text x="124" y="378" fill="#0F172A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-3">confident, and clear.</text>
+  <rect x="846" y="182" width="170" height="170" rx="32" fill="#2563EB"/>
+  <text x="931" y="286" text-anchor="middle" fill="white" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="88" font-weight="800" letter-spacing="-8">MC</text>
+  <text x="124" y="462" fill="#5F6B85" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="500">Product designer focused on calm systems, clarity, and trust.</text>
+</svg>

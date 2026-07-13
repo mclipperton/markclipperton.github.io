@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://markclipperton.github.io";
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://mclipperton.github.io/portfolio";
 const sitePath = process.env.NEXT_PUBLIC_SITE_PATH ?? "";
 const normalizedSiteUrl = siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`;
 const assetPath = (path: string) => `${sitePath}${path}`;
