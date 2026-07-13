@@ -19,27 +19,25 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: baseUrl,
-    title: "Mara Vale | Product Designer",
+    title: "Mark Clipperton | Product Designer",
     description:
-      "A portfolio website for product designer Mara Vale, featuring selected work, design principles, and contact details.",
+      "A portfolio website for product designer Mark Clipperton, featuring selected work, design principles, and contact details.",
     icons: {
       icon: "/favicon.svg",
       shortcut: "/favicon.svg",
     },
     openGraph: {
-      title: "Mara Vale | Product Designer",
-      description:
-        "Selected product design work, process notes, and contact details.",
+      title: "Mark Clipperton | Product Designer",
+      description: "Selected product design work, process notes, and contact details.",
       url: "/",
-      siteName: "Mara Vale",
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: "Mara Vale portfolio preview" }],
+      siteName: "Mark Clipperton",
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: "Mark Clipperton portfolio preview" }],
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Mara Vale | Product Designer",
-      description:
-        "Selected product design work, process notes, and contact details.",
+      title: "Mark Clipperton | Product Designer",
+      description: "Selected product design work, process notes, and contact details.",
       images: ["/og.png"],
     },
   };

@@ -1,45 +1,42 @@
 const featuredWork = [
   {
     label: "FinTech onboarding",
-    title: "Turned a 14-step account setup into a calm, three-minute flow.",
+    title: "Turned a long account setup into a clear, reassuring flow.",
     summary:
-      "Redesigned the first-run experience, clarified verification states, and reduced drop-off with progressive disclosure.",
+      "Reduced friction with progressive disclosure, sharper copy, and tighter guidance through the final verification step.",
     impact: "22% lift in completion",
-    tags: ["UX strategy", "Flow design", "Content design"],
   },
   {
     label: "AI workspace",
-    title: "Shaped a tool-first dashboard that lets teams find signal fast.",
+    title: "Shaped a dashboard that helps teams spot signal fast.",
     summary:
-      "Built a modular canvas, reworked the information hierarchy, and gave the product a stronger editorial voice.",
-    impact: "31% faster task discovery",
-    tags: ["Information architecture", "Design systems", "Prototyping"],
+      "Reworked the hierarchy, simplified navigation, and introduced a calmer canvas for high-density product work.",
+    impact: "31% faster discovery",
   },
   {
     label: "Health app",
-    title: "Made a dense care plan feel reassuring, not clinical.",
+    title: "Made a clinically dense journey feel calm and predictable.",
     summary:
-      "Paired softer motion cues with clearer progress indicators so patients always know what happens next.",
+      "Balanced motion, progress cues, and accessible UI patterns so people always know what happens next.",
     impact: "4.8/5 usability score",
-    tags: ["Mobile UX", "Accessibility", "Motion"],
   },
 ];
 
 const principles = [
   {
-    title: "Make the first screen do the work",
+    title: "Clarity first",
     copy:
-      "I design the opening view to answer three questions immediately: what is this, why does it matter, and what should happen next.",
+      "I strip away noise early so the product tells a single story before the user has to work for it.",
   },
   {
-    title: "Build systems, not one-offs",
+    title: "Systems over screens",
     copy:
-      "The final interface should feel effortless at launch and still scale when the product team doubles in size.",
+      "Strong design systems keep launch work quick and make future changes feel intentional, not patched on.",
   },
   {
-    title: "Protect clarity under pressure",
+    title: "Polish that earns trust",
     copy:
-      "When a product gets complex, I simplify the hierarchy, trim the copy, and keep the interactions predictable.",
+      "The final 10 percent matters: spacing, tone, states, and microcopy all shape how reliable a product feels.",
   },
 ];
 
@@ -49,18 +46,40 @@ const stats = [
   { value: "11", label: "cross-functional launches" },
 ];
 
+const capabilities = [
+  "Product strategy",
+  "Design systems",
+  "Interaction design",
+  "Prototyping",
+  "Accessibility",
+  "Content design",
+];
+
 export default function Home() {
   return (
     <main className="portfolio-shell">
-      <section className="hero">
+      <header className="topbar">
+        <a className="brand-mark" href="#top">
+          <span className="brand-dot" aria-hidden="true" />
+          Mark Clipperton
+        </a>
+
+        <nav className="topnav" aria-label="Primary">
+          <a href="#work">Work</a>
+          <a href="#approach">Approach</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section className="hero" id="top">
         <div className="hero-copy">
           <span className="eyebrow">Product designer • systems thinker • calm strategist</span>
-          <h1>Designing digital products that feel sharp, human, and quietly confident.</h1>
+          <h1>Designing products that feel clear, confident, and easy to trust.</h1>
           <p className="lede">
-            I’m Mara Vale, a product designer who helps ambitious teams turn
-            complicated ideas into clear, polished experiences. I work across
+            I’m Mark Clipperton, a product designer who helps teams turn
+            complicated ideas into calm, polished experiences. I work across
             strategy, interface design, and prototyping to move products from
-            concept to launch with less noise and more momentum.
+            concept to launch without losing the details that matter.
           </p>
 
           <div className="hero-actions">
@@ -68,7 +87,7 @@ export default function Home() {
               View selected work
             </a>
             <a className="button button-secondary" href="#contact">
-              Start a project
+              Start a conversation
             </a>
           </div>
         </div>
@@ -76,25 +95,26 @@ export default function Home() {
         <aside className="hero-panel" aria-label="Designer snapshot">
           <div className="hero-orb hero-orb-top" aria-hidden="true" />
           <div className="hero-orb hero-orb-bottom" aria-hidden="true" />
-          <div className="panel-card panel-card-featured">
-            <div className="panel-card-topline">
-              <span>Current focus</span>
-              <span>Remote, London</span>
-            </div>
-            <p>
-              Crafting product narratives, interaction systems, and launch-ready
-              interfaces for teams that need speed without sacrificing taste.
-            </p>
-          </div>
+
+          <figure className="portrait-card">
+            <img
+              src="/mark-clipperton.jpg"
+              alt="Mark Clipperton smiling in formalwear outdoors"
+            />
+            <figcaption>
+              <strong>Mark Clipperton</strong>
+              <span>Product designer based in the UK</span>
+            </figcaption>
+          </figure>
 
           <div className="panel-grid">
             <div className="panel-card">
-              <span className="panel-label">Favorite tools</span>
-              <strong>Figma, Framer, research notes, rapid prototypes</strong>
+              <span className="panel-label">Focus</span>
+              <strong>Startup products, systems thinking, and launch-ready UX</strong>
             </div>
             <div className="panel-card">
-              <span className="panel-label">Design style</span>
-              <strong>Editorial, tactile, and generous with whitespace</strong>
+              <span className="panel-label">Style</span>
+              <strong>Editorial layouts, quiet confidence, and crisp hierarchy</strong>
             </div>
           </div>
         </aside>
@@ -106,6 +126,14 @@ export default function Home() {
             <strong>{stat.value}</strong>
             <span>{stat.label}</span>
           </article>
+        ))}
+      </section>
+
+      <section className="capabilities-section" aria-label="Capabilities">
+        {capabilities.map((capability) => (
+          <span className="chip" key={capability}>
+            {capability}
+          </span>
         ))}
       </section>
 
@@ -128,17 +156,12 @@ export default function Home() {
               </div>
               <h3>{item.title}</h3>
               <p>{item.summary}</p>
-              <ul className="tag-list" aria-label={`${item.label} skills`}>
-                {item.tags.map((tag) => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="principles-section">
+      <section className="principles-section" id="approach">
         <div className="section-heading">
           <span className="eyebrow">Working style</span>
           <h2>Steady process, high standards, no drama.</h2>
@@ -167,10 +190,10 @@ export default function Home() {
         </p>
 
         <div className="contact-actions">
-          <a className="button button-primary" href="mailto:mara@maravale.design">
-            mara@maravale.design
+          <a className="button button-primary" href="mailto:mark@markclipperton.design">
+            mark@markclipperton.design
           </a>
-          <a className="button button-secondary" href="https://www.linkedin.com">
+          <a className="button button-secondary" href="https://uk.linkedin.com/in/markclipperton">
             LinkedIn
           </a>
         </div>
