@@ -277,6 +277,7 @@ a {
 .home-hero h1 {
   margin: 0;
   color: var(--accent);
+  font-family: "Kaisei Opti", var(--font-display-fallback);
   font-size: clamp(4.1rem, 5.4vw, 4.7rem);
   font-weight: 400;
   letter-spacing: -0.04em;
@@ -443,8 +444,7 @@ a {
 .principle-card,
 .contact-section,
 .stat-card,
-.capabilities-section,
-.featured-card {
+.capabilities-section {
   border: 1px solid var(--border);
   border-radius: 20px;
   background: var(--card);
@@ -452,7 +452,27 @@ a {
 }
 
 .featured-section {
-  margin-top: 10px;
+  margin-top: 40px;
+  background: #e7efff;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.featured-section-inner {
+  width: min(1440px, calc(100% - 96px));
+  margin: 0 auto;
+  padding: 48px 0 56px;
+  box-sizing: border-box;
+}
+
+.featured-section-title {
+  margin: 0 0 32px;
+  color: #313639;
+  font-family: var(--font-sans-fallback);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .hero-actions,
@@ -507,7 +527,11 @@ a {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 22px;
+  margin-top: 0;
+}
+
+.featured-grid {
+  gap: 48px;
 }
 
 .work-section,
@@ -535,60 +559,48 @@ a {
   gap: 16px;
 }
 
-.featured-card,
-.work-card,
-.principle-card {
+.featured-card {
   display: grid;
-  gap: 14px;
-  padding: 18px;
+  gap: 24px;
+  align-content: start;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
-.featured-card-media {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  min-height: 124px;
-  padding: 18px;
-  border-radius: 16px;
-  background:
-    linear-gradient(135deg, #eff5ff 0%, #dce9ff 100%);
+.featured-card-visual {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  background: #ffffff;
 }
 
-.featured-card-media span {
-  color: #215dd0;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.featured-card-body {
+  display: grid;
+  gap: 16px;
 }
 
-.featured-card h3,
-.work-card h3,
-.principle-card h3 {
+.featured-card h3 {
   margin: 0;
-  color: #0f172a;
-  font-size: 1.22rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.12;
+  color: #313639;
+  font-family: var(--font-sans-fallback);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.4;
 }
 
-.featured-card p,
-.work-card p,
-.principle-card p {
+.featured-card p {
   margin: 0;
-  color: var(--muted);
-}
-
-.featured-card-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  color: var(--accent-strong);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  color: #595959;
+  font-family: var(--font-sans-fallback);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
 }
 
 .contact-section {
@@ -718,7 +730,6 @@ a {
 
   .hero-copy,
   .hero-panel,
-  .featured-card,
   .work-card,
   .principle-card,
   .contact-section,
@@ -769,10 +780,26 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .featured-card,
-  .work-card,
-  .principle-card {
-    padding: 20px;
+  .featured-grid {
+    gap: 32px;
+  }
+
+  .featured-section-inner {
+    width: min(1440px, calc(100% - 24px));
+    padding: 24px 0 28px;
+  }
+
+  .featured-section-title {
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+
+  .featured-card {
+    gap: 16px;
+  }
+
+  .featured-card-visual {
+    height: 180px;
   }
 }
 

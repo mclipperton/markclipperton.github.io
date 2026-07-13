@@ -3,25 +3,19 @@ import { withSitePath } from "../lib/site-path";
 
 const featuredWork = [
   {
-    label: "iamproperty platform",
-    title: "Shaped complex property workflows into clearer, faster journeys.",
+    title: "Enhancing record pages",
     summary:
-      "Focused on the moments that slowed teams down, then brought structure to the journey with cleaner hierarchy, clearer states, and more confident decision-making.",
-    impact: "Senior product impact",
+      "Enhancing the hero section on record pages throughout iamproperty CRM to improve linking between records and surfacing key information users require.",
   },
   {
-    label: "Design leadership",
-    title: "Raised the quality bar across product, engineering, and design.",
+    title: "Management Reporting",
     summary:
-      "Built alignment across disciplines, kept the system coherent, and helped teams move from ideas to shippable UI with less back-and-forth.",
-    impact: "Cross-functional",
+      "Designing a brand new reporting dashboard for branch owners and branch managers to track key goals and targets.",
   },
   {
-    label: "Design systems",
-    title: "Created patterns that let the product scale without losing clarity.",
+    title: "Property Inspections",
     summary:
-      "Turned repeated UI decisions into reusable standards for components, content, and states so future work stayed consistent and efficient.",
-    impact: "System thinking",
+      "Responsive web app that allows agents to produce detailed inspection reports in the office or on the go.",
   },
 ];
 
@@ -65,30 +59,20 @@ export default function Home() {
         </section>
 
         <section className="featured-section" id="featured-work">
-          <div className="section-heading">
-            <span className="eyebrow">Featured work</span>
-            <h2>Selected projects that show how I think, collaborate, and ship.</h2>
-            <p>
-              My work at iamproperty sits in the middle of product thinking,
-              operational complexity, and visual clarity. The goal is always the
-              same:make the product easier to use, easier to trust, and easier
-              to evolve.
-            </p>
-          </div>
+          <div className="featured-section-inner">
+            <h2 className="featured-section-title">Featured Projects</h2>
 
-          <div className="featured-grid">
-            {featuredWork.map((item) => (
-              <article className="featured-card" key={item.label}>
-                <div className="featured-card-media" aria-hidden="true">
-                  <span>{item.label}</span>
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.summary}</p>
-                <div className="featured-card-footer">
-                  <span>{item.impact}</span>
-                </div>
-              </article>
-            ))}
+            <div className="featured-grid">
+              {featuredWork.map((item) => (
+                <article className="featured-card" key={item.title}>
+                  <div className="featured-card-visual" aria-hidden="true" />
+                  <div className="featured-card-body">
+                    <h3>{item.title}</h3>
+                    <p>{item.summary}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
       </div>
