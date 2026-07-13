@@ -18,8 +18,8 @@ type SocialAction = {
 
 const socialActions: SocialAction[] = [
   {
-    href: "https://www.linkedin.com/in/mark-clipperton/",
-    label: "Connect on LinkedIn",
+    href: "https://www.linkedin.com/in/markclipperton/",
+    label: "Connect with me on LinkedIn",
     variant: "secondary",
     icon: <LinkedInIcon />,
     external: true,
