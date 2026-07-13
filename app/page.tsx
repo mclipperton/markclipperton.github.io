@@ -24,66 +24,70 @@ const featuredWork = [
   },
 ];
 
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/approach", label: "Approach" },
+  { href: "mailto:mark.clipperton@outlook.com", label: "Contact" },
+];
+
 export default function Home() {
   return (
     <main className="portfolio-shell">
       <header className="topbar">
         <Link className="brand-mark" href="/">
-          <span className="brand-dot" aria-hidden="true" />
           Mark Clipperton
         </Link>
 
         <nav className="topnav" aria-label="Primary">
-          <Link href="/">Home</Link>
-          <Link href="/work">Work</Link>
-          <Link href="/approach">Approach</Link>
-          <a href="mailto:mark.clipperton@outlook.com">Contact</a>
+          {navItems.map((item) =>
+            item.href.startsWith("mailto:") ? (
+              <a key={item.label} href={item.href}>
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.label}
+                aria-current={item.href === "/" ? "page" : undefined}
+                href={item.href}
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <span className="eyebrow">Introduction</span>
-          <h1>Product design that feels calm, confident, and clear.</h1>
-          <p className="lede">
-            I&apos;m Mark Clipperton, a senior product designer at iamproperty.
-            I work on complex property products, turning messy workflows into
-            clear, usable experiences that help teams move faster and make
-            better decisions.
-          </p>
+      <section className="home-hero" id="top">
+        <div className="home-hero-intro">
+          <div className="hero-avatar" aria-hidden="true">
+            MC
+          </div>
+
+          <div className="home-hero-copy">
+            <span className="hero-kicker">Hi I&apos;m Mark!</span>
+            <h1>Senior Product Designer at iamproperty.</h1>
+          </div>
         </div>
 
-        <aside className="hero-panel" aria-label="Designer snapshot">
-          <div className="hero-orb hero-orb-top" aria-hidden="true" />
-          <div className="hero-orb hero-orb-bottom" aria-hidden="true" />
+        <p className="home-hero-lede">
+          A Product Designer based in the North East of England. For over 6
+          years I&apos;ve designed digital products that help businesses grow
+          and make a meaningful impact.
+        </p>
 
-          <figure className="portrait-card">
-            <div className="portrait-fallback" aria-hidden="true">
-              <span>MC</span>
-            </div>
-            <figcaption>
-              <strong>Mark Clipperton</strong>
-              <span>Senior product designer at iamproperty</span>
-            </figcaption>
-          </figure>
-
-          <div className="panel-grid">
-            <div className="panel-card">
-              <span className="panel-label">Focus</span>
-              <strong>Property-tech journeys, product strategy, and systems</strong>
-            </div>
-            <div className="panel-card">
-              <span className="panel-label">Style</span>
-              <strong>Clear hierarchy, thoughtful detail, and senior-level execution</strong>
-            </div>
-          </div>
-        </aside>
+        <div className="home-hero-meta" aria-label="Profile highlights">
+          <span>Senior level</span>
+          <span>iamproperty</span>
+          <span>Property tech</span>
+          <span>Product systems</span>
+        </div>
       </section>
 
-      <section className="work-section" id="featured-work">
+      <section className="featured-section" id="featured-work">
         <div className="section-heading">
           <span className="eyebrow">Featured work</span>
-          <h2>Selected work that shows the scale, judgment, and craft behind the role.</h2>
+          <h2>Selected projects that show how I think, collaborate, and ship.</h2>
           <p>
             My work at iamproperty sits in the middle of product thinking,
             operational complexity, and visual clarity. The goal is always the
@@ -92,15 +96,17 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="work-grid">
+        <div className="featured-grid">
           {featuredWork.map((item) => (
-            <article className="work-card" key={item.label}>
-              <div className="work-card-header">
+            <article className="featured-card" key={item.label}>
+              <div className="featured-card-media" aria-hidden="true">
                 <span>{item.label}</span>
-                <span>{item.impact}</span>
               </div>
               <h3>{item.title}</h3>
               <p>{item.summary}</p>
+              <div className="featured-card-footer">
+                <span>{item.impact}</span>
+              </div>
             </article>
           ))}
         </div>

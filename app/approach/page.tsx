@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/approach", label: "Approach" },
+  { href: "mailto:mark.clipperton@outlook.com", label: "Contact" },
+];
+
 const principles = [
   {
     title: "Clarity first",
@@ -48,15 +55,25 @@ export default function ApproachPage() {
     <main className="portfolio-shell">
       <header className="topbar">
         <Link className="brand-mark" href="/">
-          <span className="brand-dot" aria-hidden="true" />
           Mark Clipperton
         </Link>
 
         <nav className="topnav" aria-label="Primary">
-          <Link href="/">Home</Link>
-          <Link href="/work">Work</Link>
-          <Link href="/approach">Approach</Link>
-          <a href="mailto:mark.clipperton@outlook.com">Contact</a>
+          {navItems.map((item) =>
+            item.href.startsWith("mailto:") ? (
+              <a key={item.label} href={item.href}>
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.label}
+                aria-current={item.href === "/approach" ? "page" : undefined}
+                href={item.href}
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
       </header>
 
