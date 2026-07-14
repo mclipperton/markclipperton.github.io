@@ -19,9 +19,13 @@ type SocialAction = {
 const socialActions: SocialAction[] = [
   {
     href: "https://www.linkedin.com/in/markclipperton/",
-    label: "Connect with me on LinkedIn",
+    label: "Connect on LinkedIn",
     variant: "secondary",
-    icon: <LinkedInIcon />,
+    icon: (
+      <span className="action-pill-icon" aria-hidden="true">
+        connect_without_contact
+      </span>
+    ),
     external: true,
   },
   {
@@ -92,34 +96,6 @@ export function SiteHeader({ activePath }: SiteHeaderProps) {
         </div>
       </div>
     </header>
-  );
-}
-
-function LinkedInIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      fill="none"
-      viewBox="0 0 18 18"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect
-        height="14"
-        rx="3"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        width="14"
-        x="2"
-        y="2"
-      />
-      <path
-        d="M6 7.5v5M6 5.5v.1M8.8 12.5V9.4c0-1 .6-1.9 1.7-1.9 1 0 1.5.7 1.5 1.9v3.1"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-    </svg>
   );
 }
 

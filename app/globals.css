@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Material+Icons&family=Poppins:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -179,13 +179,14 @@ a {
 .action-pill {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  min-height: 48px;
-  padding: 0 20px;
-  border-radius: 999px;
-  font-size: 0.96rem;
+  gap: 10px;
+  min-height: 50px;
+  padding: 10px 32px;
+  border-radius: 24px;
+  font-family: var(--font-sans-fallback);
+  font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   line-height: 1;
   transition:
     transform 160ms ease,
@@ -200,6 +201,25 @@ a {
   flex: 0 0 auto;
 }
 
+.action-pill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  font-family: "Material Icons";
+  font-size: 18px;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  color: currentColor;
+}
+
 .action-pill:hover,
 .action-pill:focus-visible {
   transform: translateY(-1px);
@@ -211,13 +231,16 @@ a {
 }
 
 .action-pill-secondary {
-  color: #343a45;
+  color: #313639;
   background: #e2e2e6;
+  box-shadow: none;
 }
 
 .action-pill-secondary:hover,
 .action-pill-secondary:focus-visible {
-  background: #d8d8de;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.24)),
+    #dfdfdf;
 }
 
 .action-pill-primary {
